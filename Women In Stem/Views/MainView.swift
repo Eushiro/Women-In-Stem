@@ -34,7 +34,8 @@ struct PrimaryButton: View {
     let descriptor: Descriptor
     let width: CGFloat
     let height: CGFloat
-    var color: LinearGradient?
+    var color: Image?
+    let foregroundColor = Color.white
     var body: some View {
         NavigationLink(destination: ListView(descriptor: descriptor)) {
             VStack {
@@ -42,19 +43,19 @@ struct PrimaryButton: View {
                 Image(descriptor.rawValue)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .foregroundColor(Color.white)
+                    .foregroundColor(foregroundColor)
                     .padding()
                 Spacer()
                 Text(descriptor.rawValue.capitalized)
-                    .foregroundColor(Color.white)
+                    .foregroundColor(foregroundColor)
                     .fontWeight(.semibold)
                     .padding()
-                    .font(.system(size: 22))
+                    .font(.system(size: 19))
             }
             .frame(width: width, height: height)
-            .background(color ?? greenGradient)
         }
         .border(Color.black, width: 0.3)
+        .background(color?.resizable())
     }
 }
 
@@ -102,23 +103,26 @@ struct DescriptionView: View {
 //Home view, landing page of app
 struct HomeView: View {
     let buttonSpacing = CGFloat(0.1)
+    let backgroundColor = Image("waterGreen")
     var body: some View {
         NavigationView {
             GeometryReader { geometry in
                 VStack(alignment: .center, spacing: self.buttonSpacing) {
                     Divider()
                     HStack(spacing: self.buttonSpacing) {
-                        PrimaryButton(descriptor: Descriptor.CHEMISTRY, width: geometry.size.width/3, height: geometry.size.height/2)
+                        PrimaryButton(descriptor: Descriptor.CHEMISTRY, width: geometry.size.width/3, height: geometry.size.height/2, color: self.backgroundColor)
                         
-                        PrimaryButton(descriptor: Descriptor.PHYSICS, width: geometry.size.width/3, height: geometry.size.height/2)
+                        PrimaryButton(descriptor: Descriptor.PHYSICS, width: geometry.size.width/3, height: geometry.size.height/2, color: self.backgroundColor)
                         
-                        PrimaryButton(descriptor: Descriptor.BIOLOGY, width: geometry.size.width/3, height: geometry.size.height/2)
+                        PrimaryButton(descriptor: Descriptor.BIOLOGY, width: geometry.size.width/3, height: geometry.size.height/2, color: self.backgroundColor)
                     }
                     
                     HStack(spacing: self.buttonSpacing) {
-                        PrimaryButton(descriptor: Descriptor.ENGINEERING, width: geometry.size.width/2, height: geometry.size.height/2)
+                        PrimaryButton(descriptor: Descriptor.ENGINEERING, width: geometry.size.width/2, height: geometry.size.height/2,
+                                      color: self.backgroundColor)
                         
-                        PrimaryButton(descriptor: Descriptor.MATH, width: geometry.size.width/2, height: geometry.size.height/2)
+                        PrimaryButton(descriptor: Descriptor.MATH, width: geometry.size.width/2, height: geometry.size.height/2,
+                                      color: self.backgroundColor)
                     }
                 }
                 .navigationBarTitle("Women in STEM")
@@ -130,6 +134,7 @@ struct HomeView: View {
 //People View, accessed from tab bar item
 struct PeopleView: View {
     let buttonSpacing = CGFloat(0.1)
+    let backgroundColor = Image("waterBlue")
     var body: some View {
         NavigationView {
             GeometryReader { geometry in
@@ -137,26 +142,26 @@ struct PeopleView: View {
                     Divider()
                     HStack(spacing: self.buttonSpacing) {
                         PrimaryButton(descriptor: Descriptor.BLACK, width: geometry.size.width/2, height: geometry.size.height/3,
-                                      color: blueGradient)
+                                      color: self.backgroundColor)
                         
                         PrimaryButton(descriptor: Descriptor.ASIAN, width: geometry.size.width/2, height: geometry.size.height/3,
-                                      color: blueGradient)
+                                      color: self.backgroundColor)
                     }
                     
                     HStack(spacing: self.buttonSpacing) {
                         PrimaryButton(descriptor: Descriptor.INDIGENOUS, width: geometry.size.width/2, height: geometry.size.height/3,
-                                      color: blueGradient)
+                                      color: self.backgroundColor)
                         
                         PrimaryButton(descriptor: Descriptor.LATINA, width: geometry.size.width/2, height: geometry.size.height/3,
-                                      color: blueGradient)
+                                      color: self.backgroundColor)
                     }
                     
                     HStack(spacing: self.buttonSpacing) {
                         PrimaryButton(descriptor: Descriptor.LOW_INCOME, width: geometry.size.width/2, height: geometry.size.height/3,
-                                      color: blueGradient)
+                                      color: self.backgroundColor)
                         
                         PrimaryButton(descriptor: Descriptor.IMMIGRANTS, width: geometry.size.width/2, height: geometry.size.height/3,
-                                      color: blueGradient)
+                                      color: self.backgroundColor)
                     }
                 }
                 .navigationBarTitle("Women in STEM")

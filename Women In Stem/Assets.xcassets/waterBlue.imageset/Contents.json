@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "dark-blue-free-vector-watercolor-background.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "dark-blue-free-vector-watercolor-background-1.jpg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "dark-blue-free-vector-watercolor-background-2.jpg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
