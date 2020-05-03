@@ -8,6 +8,22 @@
 
 import Foundation
 
+enum Descriptor: String {
+    case SCIENCE = "science"
+    case TECHNOLOGY = "technology"
+    case ENGINEERING = "engineering"
+    case MATH = "math"
+    case PHYSICS = "physics"
+    case CHEMISTRY = "chemistry"
+    case BIOLOGY = "biology"
+    case BLACK = "black women"
+    case ASIAN = "asian women"
+    case INDIGENOUS = "indigenous women"
+    case LATINA = "latina women"
+    case LOW_INCOME = "low income"
+    case IMMIGRANTS = "immigrant"
+    case DISABILITY = "disability"
+}
 
 struct Person: Identifiable {
     let name: String

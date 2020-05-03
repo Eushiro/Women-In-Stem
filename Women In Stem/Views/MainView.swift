@@ -8,23 +8,6 @@
 
 import SwiftUI
 
-enum Descriptor: String {
-    case SCIENCE = "science"
-    case TECHNOLOGY = "technology"
-    case ENGINEERING = "engineering"
-    case MATH = "math"
-    case PHYSICS = "physics"
-    case CHEMISTRY = "chemistry"
-    case BIOLOGY = "biology"
-    case BLACK = "black women"
-    case ASIAN = "asian women"
-    case INDIGENOUS = "indigenous women"
-    case LATINA = "latina women"
-    case LOW_INCOME = "low income"
-    case IMMIGRANTS = "immigrant"
-    case DISABILITY = "disability"
-}
-
 let blueGradient = LinearGradient(gradient: Gradient(colors: [Color("blue"), Color("LightBlue")]), startPoint: .bottom, endPoint: .top)
 let greenGradient = LinearGradient(gradient: Gradient(colors: [Color("DarkGreen"), Color("LightGreen")]), startPoint: .bottom, endPoint: .top)
 
@@ -54,7 +37,36 @@ struct PrimaryButton: View {
             }
             .frame(width: width, height: height)
         }
-        .border(Color.black, width: 0.3)
+        .border(foregroundColor, width: 0.3)
+        .background(color?.resizable())
+    }
+}
+
+struct GameButton: View {
+    let text: String
+    let width: CGFloat
+    let height: CGFloat
+    var color: Image?
+    let foregroundColor = Color.white
+    let gameSession: GameSession
+    var body: some View {
+        Button(action: {
+            if !self.gameSession.checkGameOver() {
+                self.gameSession.questionNumber += 1
+            }
+            if self.gameSession.validateAnswer(answer: self.text) {
+                self.gameSession.correctAnswers += 1
+            }
+            self.gameSession.getNextQuestion()
+        }) {
+            Text(text)
+                .foregroundColor(foregroundColor)
+                .fontWeight(.semibold)
+                .padding()
+                .font(.system(size: 30))
+                .frame(width: width, height: height)
+        }
+        .border(foregroundColor, width: 0.3)
         .background(color?.resizable())
     }
 }
@@ -172,10 +184,43 @@ struct PeopleView: View {
 
 //Games view
 struct GamesView: View {
+    let buttonSpacing = CGFloat(0.1)
+    let backgroundColor = Image("waterBlue")
+    @ObservedObject var game = GameSession()
     var body: some View {
         NavigationView {
-            Text("")
-            .navigationBarTitle("Games")
+            GeometryReader { geometry in
+                VStack(alignment: .center, spacing: self.buttonSpacing) {
+                    Divider()
+                    HStack {
+                        Text("Score: " + String(self.game.correctAnswers))
+                            .padding()
+                            .font(.system(size: 20))
+                        Spacer()
+                        Text("Question: " + String(self.game.questionNumber) + "/" + String(self.game.totalQuestions))
+                            .padding()
+                            .font(.system(size: 20))
+                    }
+                    Spacer()
+                    Text(self.game.currentQuestion.question)
+                        .padding()
+                        .font(.system(size: 25))
+                        .multilineTextAlignment(.center)
+                    Spacer()
+                    HStack(spacing: self.buttonSpacing) {
+                        GameButton(text: self.game.currentQuestion.options[0] , width: geometry.size.width/2, height: geometry.size.width/2, color: self.backgroundColor, gameSession: self.game)
+                        
+                        GameButton(text: self.game.currentQuestion.options[1] , width: geometry.size.width/2, height: geometry.size.width/2, color: self.backgroundColor, gameSession: self.game)
+                    }
+                    
+                    HStack(spacing: self.buttonSpacing) {
+                        GameButton(text: self.game.currentQuestion.options[2] , width: geometry.size.width/2, height: geometry.size.width/2, color: self.backgroundColor, gameSession: self.game)
+                        
+                        GameButton(text: self.game.currentQuestion.options[3] , width: geometry.size.width/2, height: geometry.size.width/2, color: self.backgroundColor, gameSession: self.game)
+                    }
+                }
+                .navigationBarTitle("Trivia")
+            }
         }
     }
 }
@@ -201,7 +246,7 @@ struct ContentView: View {
             GamesView()
             .tabItem {
                 Image(systemName: "gamecontroller")
-                Text("Games")
+                Text("Quiz")
             }
         }
     }
