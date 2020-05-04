@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  References.swift
 //  Women In Stem
 //
 //  Created by Hiro Ayettey on 2020-05-02.

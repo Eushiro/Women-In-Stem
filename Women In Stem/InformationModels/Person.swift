@@ -1,5 +1,5 @@
 //
-//  PeopleModels.swift
+//  Person.swift
 //  Women In Stem
 //
 //  Created by Hiro Ayettey on 2020-05-02.
