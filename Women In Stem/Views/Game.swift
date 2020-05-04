@@ -11,7 +11,7 @@ import SwiftUI
 //Games view
 struct GamesView: View {
     let buttonSpacing = CGFloat(0.1)
-    let backgroundColor = Image("waterBlue")
+    let backgroundColor = Image("waterPurple")
     @ObservedObject var game = GameSession()
     var body: some View {
         NavigationView {
@@ -21,11 +21,13 @@ struct GamesView: View {
                     HStack {
                         Text("Score: " + String(self.game.correctAnswers))
                             .padding()
-                            .font(.custom(fontName, size: 20))
-                        Spacer()
+                            .font(.custom(fontName, size: 17))
+                        Text("High Score: " + String(self.game.highscore))
+                        .padding()
+                        .font(.custom(fontName, size: 17))
                         Text("Question: " + String(self.game.questionNumber) + "/" + String(self.game.totalQuestions))
                             .padding()
-                            .font(.custom(fontName, size: 20))
+                            .font(.custom(fontName, size: 17))
                     }
                     Spacer()
                     Text(self.game.currentQuestion.question)

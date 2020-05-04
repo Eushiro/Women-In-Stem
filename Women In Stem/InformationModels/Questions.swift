@@ -36,7 +36,7 @@ class Question {
     }
 }
 
-let congratulationMessage = Question(question: "Congratulations! You've finished the game.", answer: "", options: ["", "", "", ""])
+let congratulationMessage = Question(question: "Game Over\n Click the button to play again!", answer: "", options: ["", "", "", ""])
 
 var questions = [
     Question(question: "Who worked on the Manhattan project and worked on beta decay?", answer: "Chien-Shiung Wu"),

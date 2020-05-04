@@ -9,7 +9,6 @@
 import Foundation
 import SwiftUI
 
-
 class GameSession: ObservableObject {
     @Published var currentQuestion = questions[0] {
         didSet {
@@ -23,7 +22,8 @@ class GameSession: ObservableObject {
     var correctAnswers = 0
     var questionNumber = 1
     var gameIsOver = false
-    
+    lazy var highscore = getHighscore()
+
     func validateAnswer(answer: String) -> Bool {
         return answer == currentQuestion.answer
     }
@@ -37,12 +37,26 @@ class GameSession: ObservableObject {
     }
     
     func resetGame() {
+        highscore = max(highscore, correctAnswers)
+        saveHighscore()
         correctAnswers = 0
         questionNumber = 1
         gameIsOver = false
         questions = questions.shuffled()
         iterator = questions.makeIterator()
         getNextQuestion()
+    }
+    
+    func saveHighscore() {
+        let highScoreKey = "highScoreKey"
+        let defaults = UserDefaults.standard
+        defaults.set(max(highscore, correctAnswers), forKey: highScoreKey)
+    }
+    
+    func getHighscore() -> Int {
+        let highScoreKey = "highScoreKey"
+        let defaults = UserDefaults.standard
+        return defaults.integer(forKey: highScoreKey)
     }
 }
 

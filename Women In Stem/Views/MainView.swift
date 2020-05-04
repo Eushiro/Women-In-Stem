@@ -31,7 +31,7 @@ struct ContentView: View {
             GamesView()
             .tabItem {
                 Image(systemName: "gamecontroller")
-                Text("Quiz")
+                Text("Trivia")
             }
         }
     }

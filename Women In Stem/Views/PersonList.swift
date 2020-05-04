@@ -9,7 +9,7 @@
 import SwiftUI
 
 //List that appears on Primary button click
-struct PeopleList: View {
+struct PersonList: View {
     var descriptor: Descriptor
     var body: some View {
             List() {
