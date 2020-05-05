@@ -8,10 +8,12 @@
 
 import SwiftUI
 
+let blueGradient = LinearGradient(gradient: Gradient(colors: [Color("blue"), Color("LightBlue")]), startPoint: .bottom, endPoint: .top)
+
 //People View, accessed from tab bar item
 struct BackgroundView: View {
     let buttonSpacing = CGFloat(0.1)
-    let backgroundColor = Image("waterBlue")
+    let backgroundColor = blueGradient
     var body: some View {
         NavigationView {
             GeometryReader { geometry in

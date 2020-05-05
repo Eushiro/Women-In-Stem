@@ -8,10 +8,12 @@
 
 import SwiftUI
 
+let greenGradient = LinearGradient(gradient: Gradient(colors: [Color("DarkGreen"), Color("LightGreen")]), startPoint: .bottom, endPoint: .top)
+
 //Home view, landing page of app
 struct FieldsView: View {
     let buttonSpacing = CGFloat(0.1)
-    let backgroundColor = Image("waterGreen")
+    let backgroundColor = greenGradient
     var body: some View {
         NavigationView {
             GeometryReader { geometry in

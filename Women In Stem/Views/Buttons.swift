@@ -13,7 +13,7 @@ struct PrimaryButton: View {
     let descriptor: Descriptor
     let width: CGFloat
     let height: CGFloat
-    var color: Image?
+    var color: LinearGradient
     let foregroundColor = Color.white
     var body: some View {
         NavigationLink(destination: PersonList(descriptor: descriptor)) {
@@ -34,7 +34,7 @@ struct PrimaryButton: View {
             .frame(width: width, height: height)
         }
         .border(foregroundColor, width: 0.3)
-        .background(color?.resizable())
+        .background(color)
     }
 }
 
@@ -42,7 +42,7 @@ struct GameButton: View {
     let text: String
     let width: CGFloat
     let height: CGFloat
-    var color: Image?
+    var color: LinearGradient
     let foregroundColor = Color.white
     let gameSession: GameSession
     var body: some View {
@@ -66,7 +66,7 @@ struct GameButton: View {
                 .multilineTextAlignment(.center)
         }
         .border(foregroundColor, width: 0.3)
-        .background(color?.resizable())
+        .background(color)
         .disabled(gameSession.gameIsOver)
     }
 }

@@ -8,10 +8,12 @@
 
 import SwiftUI
 
+let purpleGradient = LinearGradient(gradient: Gradient(colors: [Color("DarkPurple"), Color("LightPurple")]), startPoint: .bottom, endPoint: .top)
+
 //Games view
 struct GamesView: View {
     let buttonSpacing = CGFloat(0.1)
-    let backgroundColor = Image("waterPurple")
+    let backgroundColor = purpleGradient
     @ObservedObject var game = GameSession()
     var body: some View {
         NavigationView {
