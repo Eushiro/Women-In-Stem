@@ -22,12 +22,18 @@ struct GamesView: View {
                     Divider()
                     HStack {
                         Text("Score: " + String(self.game.correctAnswers))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.8)
                             .padding()
                             .font(.custom(fontName, size: 17))
                         Text("High Score: " + String(self.game.highscore))
-                        .padding()
-                        .font(.custom(fontName, size: 17))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.8)
+                            .padding()
+                            .font(.custom(fontName, size: 17))
                         Text("Question: " + String(self.game.questionNumber) + "/" + String(self.game.totalQuestions))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.8)
                             .padding()
                             .font(.custom(fontName, size: 17))
                     }
@@ -35,6 +41,7 @@ struct GamesView: View {
                     Text(self.game.currentQuestion.question)
                         .padding()
                         .font(.custom(fontName, size: 25))
+                        .minimumScaleFactor(0.5)
                         .multilineTextAlignment(.center)
                     if self.game.gameIsOver {
                         Button(action: {
