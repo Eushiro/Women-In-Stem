@@ -10,13 +10,14 @@ import Foundation
 import SwiftUI
 
 class GameSession: ObservableObject {
-    @Published var currentQuestion = questions[0] {
+    @Published var currentQuestion = Question(question: "", answer: "") {
         didSet {
             currentOptions = currentQuestion.generateOptions(question: currentQuestion)
         }
     }
-    lazy var currentOptions = currentQuestion.generateOptions(question: questions[0])
-    var iterator = questions.makeIterator()
+    private var questionViewModel = QuestionViewModel()
+    lazy var currentOptions = currentQuestion.generateOptions(question: Question(question: "", answer: ""))
+    lazy var iterator = questionViewModel.questions.makeIterator()
     var questionsCompleted = 0
     var totalQuestions = 10
     var correctAnswers = 0
@@ -42,8 +43,8 @@ class GameSession: ObservableObject {
         correctAnswers = 0
         questionNumber = 1
         gameIsOver = false
-        questions = questions.shuffled()
-        iterator = questions.makeIterator()
+        questionViewModel.questions = questionViewModel.questions.shuffled()
+        iterator = questionViewModel.questions.makeIterator()
         getNextQuestion()
     }
     
