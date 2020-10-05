@@ -3,11 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1F1C6BB0245EA5A6004A72AD /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C6BAF245EA5A6004A72AD /* Questions.swift */; };
+		1F2E4909252A73D30080B90F /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 1F2E4908252A73D30080B90F /* FirebaseDatabase */; };
+		1F2E490B252A73D30080B90F /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1F2E490A252A73D30080B90F /* FirebaseFirestoreSwift */; };
+		1F2E490D252A73D30080B90F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1F2E490C252A73D30080B90F /* FirebaseFirestore */; };
+		1F2E490F252A73D30080B90F /* Firebase in Frameworks */ = {isa = PBXBuildFile; productRef = 1F2E490E252A73D30080B90F /* Firebase */; };
+		1F2E4916252A74710080B90F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F2E4915252A74700080B90F /* GoogleService-Info.plist */; };
+		1F2E4926252A8DA00080B90F /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1F2E4925252A8DA00080B90F /* URLImage */; };
 		1F3A7F5C245E1F770089B586 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A7F5B245E1F770089B586 /* Person.swift */; };
 		1F460ACC245B7EF7000D1FDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F460ACB245B7EF7000D1FDD /* AppDelegate.swift */; };
 		1F460ACE245B7EF7000D1FDD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F460ACD245B7EF7000D1FDD /* SceneDelegate.swift */; };
@@ -21,13 +27,12 @@
 		1F9EC7792460C6B400818980 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9EC7782460C6B400818980 /* Game.swift */; };
 		1F9EC77B2460C6D900818980 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9EC77A2460C6D900818980 /* Background.swift */; };
 		1F9EC77D2460C71800818980 /* Fields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9EC77C2460C71800818980 /* Fields.swift */; };
-		1FF9E47F245E30F5002F9C44 /* TextDescriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF9E47E245E30F5002F9C44 /* TextDescriptions.swift */; };
-		1FF9E481245E3533002F9C44 /* References.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF9E480245E3533002F9C44 /* References.swift */; };
 		1FF9E483245E3BAE002F9C44 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF9E482245E3BAE002F9C44 /* GameModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F1C6BAF245EA5A6004A72AD /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
+		1F2E4915252A74700080B90F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1F3A7F5B245E1F770089B586 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Person.swift; path = "Women In Stem/InformationModels/Person.swift"; sourceTree = SOURCE_ROOT; };
 		1F460AC8245B7EF7000D1FDD /* Women In Stem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Women In Stem.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F460ACB245B7EF7000D1FDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,8 +48,6 @@
 		1F9EC7782460C6B400818980 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		1F9EC77A2460C6D900818980 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		1F9EC77C2460C71800818980 /* Fields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fields.swift; sourceTree = "<group>"; };
-		1FF9E47E245E30F5002F9C44 /* TextDescriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDescriptions.swift; sourceTree = "<group>"; };
-		1FF9E480245E3533002F9C44 /* References.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = References.swift; sourceTree = "<group>"; };
 		1FF9E482245E3BAE002F9C44 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,6 +56,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F2E4909252A73D30080B90F /* FirebaseDatabase in Frameworks */,
+				1F2E490F252A73D30080B90F /* Firebase in Frameworks */,
+				1F2E490B252A73D30080B90F /* FirebaseFirestoreSwift in Frameworks */,
+				1F2E4926252A8DA00080B90F /* URLImage in Frameworks */,
+				1F2E490D252A73D30080B90F /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,8 +72,6 @@
 			children = (
 				1F3A7F5B245E1F770089B586 /* Person.swift */,
 				1F1C6BAF245EA5A6004A72AD /* Questions.swift */,
-				1FF9E47E245E30F5002F9C44 /* TextDescriptions.swift */,
-				1FF9E480245E3533002F9C44 /* References.swift */,
 			);
 			path = InformationModels;
 			sourceTree = "<group>";
@@ -91,6 +97,7 @@
 			children = (
 				1F460ACB245B7EF7000D1FDD /* AppDelegate.swift */,
 				1F460ACD245B7EF7000D1FDD /* SceneDelegate.swift */,
+				1F2E4915252A74700080B90F /* GoogleService-Info.plist */,
 				1F9EC7732460C62700818980 /* Game Logic */,
 				1F3A7F5D245E1F820089B586 /* InformationModels */,
 				1F4FCD43245CFC6D0062D3A0 /* Views */,
@@ -148,6 +155,13 @@
 			dependencies = (
 			);
 			name = "Women In Stem";
+			packageProductDependencies = (
+				1F2E4908252A73D30080B90F /* FirebaseDatabase */,
+				1F2E490A252A73D30080B90F /* FirebaseFirestoreSwift */,
+				1F2E490C252A73D30080B90F /* FirebaseFirestore */,
+				1F2E490E252A73D30080B90F /* Firebase */,
+				1F2E4925252A8DA00080B90F /* URLImage */,
+			);
 			productName = "Women In Stem";
 			productReference = 1F460AC8245B7EF7000D1FDD /* Women In Stem.app */;
 			productType = "com.apple.product-type.application";
@@ -159,7 +173,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Hiro Ayettey";
 				TargetAttributes = {
 					1F460AC7245B7EF7000D1FDD = {
@@ -176,6 +190,10 @@
 				Base,
 			);
 			mainGroup = 1F460ABF245B7EF7000D1FDD;
+			packageReferences = (
+				1F2E4907252A73D30080B90F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				1F2E4924252A8D9F0080B90F /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = 1F460AC9245B7EF7000D1FDD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -191,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F460AD8245B7EFA000D1FDD /* LaunchScreen.storyboard in Resources */,
+				1F2E4916252A74710080B90F /* GoogleService-Info.plist in Resources */,
 				1F460AD5245B7EFA000D1FDD /* Preview Assets.xcassets in Resources */,
 				1F460AD2245B7EFA000D1FDD /* Assets.xcassets in Resources */,
 			);
@@ -204,9 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F9EC7722460C56300818980 /* Buttons.swift in Sources */,
-				1FF9E47F245E30F5002F9C44 /* TextDescriptions.swift in Sources */,
 				1F9EC7792460C6B400818980 /* Game.swift in Sources */,
-				1FF9E481245E3533002F9C44 /* References.swift in Sources */,
 				1F9EC77D2460C71800818980 /* Fields.swift in Sources */,
 				1F460ACC245B7EF7000D1FDD /* AppDelegate.swift in Sources */,
 				1F460ACE245B7EF7000D1FDD /* SceneDelegate.swift in Sources */,
@@ -260,6 +277,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -320,6 +338,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -410,6 +429,53 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1F2E4907252A73D30080B90F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = "6.31-spm-beta";
+				kind = branch;
+			};
+		};
+		1F2E4924252A8D9F0080B90F /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.19;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1F2E4908252A73D30080B90F /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1F2E4907252A73D30080B90F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		1F2E490A252A73D30080B90F /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1F2E4907252A73D30080B90F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		1F2E490C252A73D30080B90F /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1F2E4907252A73D30080B90F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		1F2E490E252A73D30080B90F /* Firebase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1F2E4907252A73D30080B90F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = Firebase;
+		};
+		1F2E4925252A8DA00080B90F /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1F2E4924252A8D9F0080B90F /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1F460AC0245B7EF7000D1FDD /* Project object */;
 }

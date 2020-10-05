@@ -7,14 +7,34 @@
 //
 
 import SwiftUI
+import URLImage
 
 //Description page that appears on ListView cell click
 struct DescriptionView: View {
     var person: Person
+    var allReferences: String? {
+        get {
+            return person.references.map { $0.trimmingCharacters(in: .whitespacesAndNewlines)}
+                .joined(separator: "\n\n")
+        }
+    }
     var body: some View {
         VStack {
             ScrollView {
                 VStack {
+                    HStack {
+                        Spacer()
+                        URLImage(URL(string: person.link)!) { proxy in
+                            proxy.image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .clipped()
+                        }
+                        .frame(width: UIScreen.main.bounds.width * 0.7)
+                        .padding()
+                        Spacer()
+                    }
+                    
                     Text(person.text)
                         .navigationBarTitle(person.name)
                         .padding()
@@ -24,10 +44,8 @@ struct DescriptionView: View {
                         .padding()
                         .multilineTextAlignment(.leading)
                     
-                    ForEach(person.references, id: \.self) { reference in
-                        Text(reference.trimmingCharacters(in: .whitespacesAndNewlines))
-                            .padding()
-                    }
+                    Text(allReferences ?? "")
+                        .padding()
                 }
             }
         }

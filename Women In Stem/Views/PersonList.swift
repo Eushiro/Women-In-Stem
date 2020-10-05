@@ -10,10 +10,11 @@ import SwiftUI
 
 //List that appears on Primary button click
 struct PersonList: View {
+    @ObservedObject var peopleViewModel = PeopleViewModel()
     var descriptor: Descriptor
     var body: some View {
             List() {
-                ForEach(getListValues(buttonType: descriptor)) { person in
+                ForEach(peopleViewModel.people.filter {$0.descriptors.contains(descriptor)} ) { person in
                     NavigationLink(destination: DescriptionView(person: person)) {
                         Text(person.name)
                     }

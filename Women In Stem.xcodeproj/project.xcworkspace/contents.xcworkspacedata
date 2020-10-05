@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Women In Stem.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>

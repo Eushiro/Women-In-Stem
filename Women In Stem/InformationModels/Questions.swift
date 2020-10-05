@@ -12,6 +12,7 @@ class Question {
     var question: String
     var answer: String
     var options: [String]?
+    var peopleViewModel = PeopleViewModel()
     init(question: String, answer: String, options: [String]) {
         self.question = question
         self.answer = answer
@@ -23,14 +24,14 @@ class Question {
         self.answer = answer
     }
     
-    static func generateOptions(question: Question) -> [String] {
+    func generateOptions(question: Question) -> [String] {
         if question.options != nil {
             return question.options ?? ["", "", "", ""]
         }
         
-        var options = [question.answer, people.randomElement()?.name ?? "", people.randomElement()?.name ?? "", people.randomElement()?.name ?? ""]
+        var options = [question.answer, peopleViewModel.people.randomElement()?.name ?? "", peopleViewModel.people.randomElement()?.name ?? "", peopleViewModel.people.randomElement()?.name ?? ""]
         while Set(options).count != 4 {
-            options = [question.answer, people.randomElement()?.name ?? "", people.randomElement()?.name ?? "", people.randomElement()?.name ?? ""]
+            options = [question.answer, peopleViewModel.people.randomElement()?.name ?? "", peopleViewModel.people.randomElement()?.name ?? "", peopleViewModel.people.randomElement()?.name ?? ""]
         }
         return options.shuffled()
     }

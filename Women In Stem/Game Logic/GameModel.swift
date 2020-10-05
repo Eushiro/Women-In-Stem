@@ -12,10 +12,10 @@ import SwiftUI
 class GameSession: ObservableObject {
     @Published var currentQuestion = questions[0] {
         didSet {
-            currentOptions = Question.generateOptions(question: currentQuestion)
+            currentOptions = currentQuestion.generateOptions(question: currentQuestion)
         }
     }
-    var currentOptions = Question.generateOptions(question: questions[0])
+    lazy var currentOptions = currentQuestion.generateOptions(question: questions[0])
     var iterator = questions.makeIterator()
     var questionsCompleted = 0
     var totalQuestions = 10
@@ -58,9 +58,4 @@ class GameSession: ObservableObject {
         let defaults = UserDefaults.standard
         return defaults.integer(forKey: highScoreKey)
     }
-}
-
-
-func getListValues(buttonType: Descriptor) -> [Person] {
-    return people.filter { $0.descriptors.contains(buttonType) }
 }
