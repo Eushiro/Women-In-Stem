@@ -36,6 +36,7 @@ struct DescriptionView: View {
                     }
                     
                     Text(person.text)
+                        .font(.custom(fontName, size: 18))
                         .navigationBarTitle(person.name)
                         .padding()
                     
