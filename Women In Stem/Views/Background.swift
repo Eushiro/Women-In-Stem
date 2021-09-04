@@ -45,6 +45,6 @@ struct BackgroundView: View {
                 }
                 .navigationBarTitle("Women in STEM")
             }
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

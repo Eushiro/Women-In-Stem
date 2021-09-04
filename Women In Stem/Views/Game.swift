@@ -66,6 +66,6 @@ struct GamesView: View {
                 }
                 .navigationBarTitle("Trivia")
             }
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

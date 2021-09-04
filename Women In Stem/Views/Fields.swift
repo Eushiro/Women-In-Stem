@@ -37,6 +37,6 @@ struct FieldsView: View {
                 }
                 .navigationBarTitle("Women in STEM")
             }
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
